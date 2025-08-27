@@ -1,0 +1,6 @@
+  File "/var/lib/awx/venv/awx/lib/python3.6/site-packages/django/conf/__init__.py", line 176, in __init__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+cut: /etc/tower/conf.d/environment.sh: No such file or directory
+Error: Cannot open an HTTP server: socket.error reported errno.EACCES (13)
+For help, use /usr/local/bin/supervisord -h
