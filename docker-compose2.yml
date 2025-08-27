@@ -1,0 +1,137 @@
+version: '3'
+
+
+
+services:
+
+  awx_postgres:
+
+    image: postgres:14
+
+    environment:
+
+      POSTGRES_USER: awx
+
+      POSTGRES_PASSWORD: awxpass
+
+      POSTGRES_DB: awx
+
+    networks:
+
+      awx_network:
+
+        ipv4_address: 192.168.120.10
+
+    volumes:
+
+      - awx_postgres_data:/var/lib/postgresql/data
+
+
+
+  awx_redis:
+
+    image: redis:7.0
+
+    networks:
+
+      awx_network:
+
+        ipv4_address: 192.168.120.11
+
+
+
+  awx_web:
+
+    image: ansible/awx:17.0.1
+
+    depends_on:
+
+      - awx_postgres
+
+      - awx_redis
+
+    environment:
+
+      SECRET_KEY: "test1"
+
+      DATABASE_USER: awx
+
+      DATABASE_PASSWORD: awxpass
+
+      DATABASE_NAME: awx
+
+      DATABASE_HOST: awx_postgres
+
+      REDIS_HOST: awx_redis
+
+    networks:
+
+      awx_network:
+
+        ipv4_address: 192.168.120.12
+
+    ports:
+
+      - "9300:8050"
+
+    volumes:
+
+      - awx_web_data:/var/lib/awx
+
+
+
+  awx_task:
+
+    image: ansible/awx:17.0.1
+
+    depends_on:
+
+      - awx_postgres
+
+      - awx_redis
+
+    environment:
+
+      SECRET_KEY: "test1"
+
+      DATABASE_USER: awx
+
+      DATABASE_PASSWORD: awxpass
+
+      DATABASE_NAME: awx
+
+      DATABASE_HOST: awx_postgres
+
+      REDIS_HOST: awx_redis
+
+    networks:
+
+      awx_network:
+
+        ipv4_address: 192.168.120.13
+
+    volumes:
+
+      - awx_task_data:/var/lib/awx
+
+
+
+networks:
+
+  awx_network:
+
+    ipam:
+
+      config:
+
+        - subnet: 192.168.120.0/24
+
+
+
+volumes:
+
+  awx_postgres_data:
+
+  awx_web_data:
+
+  awx_task_data:
