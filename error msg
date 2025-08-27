@@ -1,0 +1,34 @@
+/usr/bin/launch_awx.sh: line 8: /etc/tower/conf.d/environment.sh: No such file or directory
+Using /etc/ansible/ansible.cfg as config file
+127.0.0.1 | FAILED! => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/libexec/platform-python"
+    },
+    "changed": false,
+    "msg": "argument port is of type <class 'str'> and we were unable to convert
+ to int: <class 'str'> cannot be converted to an int"
+}
+Using /etc/ansible/ansible.cfg as config file
+127.0.0.1 | FAILED! => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/libexec/platform-python"
+    },
+    "changed": false,
+    "msg": "argument port is of type <class 'str'> and we were unable to convert
+ to int: <class 'str'> cannot be converted to an int"
+}
+Traceback (most recent call last):
+  File "/usr/bin/awx-manage", line 8, in <module>
+    sys.exit(manage())
+  File "/var/lib/awx/venv/awx/lib/python3.6/site-packages/awx/__init__.py", line 138, in manage
+    prepare_env()
+  File "/var/lib/awx/venv/awx/lib/python3.6/site-packages/awx/__init__.py", line 97, in prepare_env
+    if not settings.DEBUG: # pragma: no cover
+  File "/var/lib/awx/venv/awx/lib/python3.6/site-packages/django/conf/__init__.py", line 79, in __getattr__
+    self._setup(name)
+  File "/var/lib/awx/venv/awx/lib/python3.6/site-packages/django/conf/__init__.py", line 66, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/var/lib/awx/venv/awx/lib/python3.6/site-packages/django/conf/__init__.py", line 176, in __init__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+cut: /etc/tower/conf.d/environment.sh: No such file or directory
