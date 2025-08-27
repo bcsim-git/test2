@@ -1,0 +1,7 @@
+  File "/var/lib/awx/venv/awx/lib/python3.6/site-packages/awx/settings/production.py", line 102, in <module>
+    DATABASES['default'].setdefault('OPTIONS', dict()).setdefault('application_name', f'{CLUSTER_HOST_ID}-{os.getpid()}-{" ".join(sys.argv)}'[:63]) # noqa
+NameError: name 'CLUSTER_HOST_ID' is not defined
+/usr/bin/launch_awx.sh: line 15: unset: `#!/bin/bash': not a valid identifier
+/usr/bin/launch_awx.sh: line 15: unset: `#': not a valid identifier
+Error: Cannot open an HTTP server: socket.error reported errno.EACCES (13)
+For help, use /usr/local/bin/supervisord -h
