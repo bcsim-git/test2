@@ -1,0 +1,6 @@
+  File "/var/lib/awx/venv/awx/lib/python3.6/site-packages/django/conf/__init__.py", line 176, in __init__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+cut: /etc/tower/conf.d/environment.sh: No such file or directory
+Error: The directory named as part of the path /var/run/supervisor/supervisor.web.pid does not exist
+For help, use /usr/local/bin/supervisord -h
