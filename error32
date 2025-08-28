@@ -1,0 +1,5 @@
+1:C 28 Aug 2025 08:39:25.387 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 28 Aug 2025 08:39:25.387 # Redis version=7.0.15, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 28 Aug 2025 08:39:25.387 # Configuration loaded
+1:M 28 Aug 2025 08:39:25.388 * monotonic clock: POSIX clock_gettime
+1:M 28 Aug 2025 08:39:25.388 # Failed opening Unix socket: bind: Permission denied
