@@ -1,0 +1,7 @@
+165 static files copied to '/var/lib/awx/venv/awx/lib/python3.6/site-packages/awx/public/static'.
+2025-08-28 02:31:24,765 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2025-08-28 02:31:24,765 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2025-08-28 02:31:25,068 INFO RPC interface 'supervisor' initialized
+2025-08-28 02:31:25,068 INFO RPC interface 'supervisor' initialized
+2025-08-28 02:31:25,069 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2025-08-28 02:31:25,069 CRIT Server 'unix_http_server' running without any HTTP authentication checking
