@@ -1,0 +1,4 @@
+*** FATAL CONFIG FILE ERROR (Redis 7.0.15) ***
+Reading the configuration file, at line 13
+>>> 'unixsocketperm 700  # Set permissions for the socket'
+wrong number of arguments
