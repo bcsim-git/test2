@@ -1,0 +1,1 @@
+ERROR: Named volume "redis_data:/data:rw" is used in service "awx_redis" but no declaration was found in the volumes section.
