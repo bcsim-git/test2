@@ -1,0 +1,6 @@
+rsyslogd: cannot create '/var/run/awx-rsyslog/rsyslog.sock': No such file or directory [v8.1911.0-7.el8 try https://www.rsyslog.com/e/2176 ]
+rsyslogd: imuxsock does not run because we could not aquire any socket  [v8.1911.0-7.el8]
+rsyslogd: activation of module imuxsock failed [v8.1911.0-7.el8]
+rsyslogd: error writing pid file (creation stage)
+: No such file or directory
+rsyslogd: run failed with error -3000 (see rsyslog.h or try https://www.rsyslog.com/e/3000 to learn what that number means)
