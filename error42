@@ -1,0 +1,54 @@
+File "/home/dockeradm/venv/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    ) -> cabc.Iterable[bytes]:
+        """The WSGI server calls the Flask application object as the
+        WSGI application. This calls :meth:`wsgi_app`, which can be
+        wrapped to apply middleware.
+        """
+        return self.wsgi_app(environ, start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "/home/dockeradm/venv/lib/python3.12/site-packages/flask/app.py", line 1514, in wsgi_app
+response = self.handle_exception(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+File "/home/dockeradm/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+response = self.full_dispatch_request()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "/home/dockeradm/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+rv = self.handle_user_exception(e)
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "/home/dockeradm/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+rv = self.dispatch_request()
+     ^^^^^^^^^^^^^^^^^^^^^^^
+File "/home/dockeradm/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "/home/dockeradm/photo_tree_app/app.py", line 99, in tree
+    return render_template('success.html', email=email)
+ 
+@app.route('/tree')
+def tree():
+    branches = root.branches  # Get branches from the tree
+    return render_template('tree.html', branches=branches, trunk_color=trunk_color, branch_color=branch_color, tree_location=tree_location)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 
+@app.route('/draw_tree')
+def draw_tree():
+    # Set up the Turtle Graphics
+    screen = turtle.Screen()
+File "/home/dockeradm/venv/lib/python3.12/site-packages/flask/templating.py", line 150, in render_template
+return _render(app, template, context)
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "/home/dockeradm/venv/lib/python3.12/site-packages/flask/templating.py", line 131, in _render
+rv = template.render(context)
+     ^^^^^^^^^^^^^^^^^^^^^^^^
+File "/home/dockeradm/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+self.environment.handle_exception()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "/home/dockeradm/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+raise rewrite_traceback_stack(source=source)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "/home/dockeradm/photo_tree_app/templates/tree.html", line 47, in top-level template code
+<div class="leaf" style="width: {{ (branch.length * 0.1) }}px; height: {{ (branch.length * 0.1) }}px; transform: rotate({{ random.uniform(-30, 30) }}deg);">{{ leaf.email }}</div>Open an interactive python shell in this frame
+File "/home/dockeradm/venv/lib/python3.12/site-packages/jinja2/environment.py", line 490, in getattr
+return getattr(obj, attribute)
+       ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'random' is undefined
